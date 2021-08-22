@@ -1,0 +1,32 @@
+// A 5-digit positive integer is entered through the keyboard, write a recursive and non-recursive function to calculate sum of digits of the 5-digit number.
+#include <stdio.h>
+#include <stdlib.h>
+int rec(int, int);
+int nonrec(int);
+int main()
+{
+    int number;
+    printf("Enter a 5-digit number:");
+    scanf("%d", &number);
+    printf("Sum of digits through recursive function:%d\n", rec(number, 0));
+    printf("Sum of digits through non-recursive function:%d", nonrec(number));
+}
+int rec(int number, int sum)
+{
+    if(number==0)
+        return sum;
+    else
+    {
+        sum+=number%10;
+        rec(number/10, sum);
+    }
+}
+int nonrec(int number)
+{
+    int sum=0;
+    for(; number>0; number/=10)
+    {
+        sum+=number%10;
+    }
+    return sum;
+}
