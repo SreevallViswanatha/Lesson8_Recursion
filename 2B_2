@@ -1,0 +1,25 @@
+// Write a program in C to find GCD of two numbers using recursion.
+#include <stdio.h>
+#include <stdlib.h>
+void cGCF(int, int);
+int main()
+{
+    int a, b;
+    printf("Enter the first number:");
+    scanf("%d", &a);
+    printf("Enter the second number:");
+    scanf("%d", &b);
+    cGCF(a, b);
+}
+void cGCF(int a, int b)
+{
+    int remainder;
+    remainder=a%b;
+    if(remainder==0)
+    {
+        printf("The GCF is:%d", b);
+        return;
+    }
+    else
+        cGCF(b, remainder);
+}
