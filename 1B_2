@@ -1,0 +1,24 @@
+// Write a program in C to calculate the sum of numbers from 1 to n using recursion.
+#include <stdio.h>
+#include <stdlib.h>
+void csum(int, int);
+int main()
+{
+    int end;
+    printf("Enter the ending point:");
+    scanf("%d", &end);
+    csum(end, 0);
+}
+void csum(int end, int sum)
+{
+    if(end==0)
+    {
+        printf("The sum of the numbers from 1 to your number is:%d", sum);
+        return;
+    }
+    else
+    {
+        sum+=end;
+        csum(end-1, sum);
+    }
+}
