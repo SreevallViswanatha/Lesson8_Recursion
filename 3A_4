@@ -1,0 +1,30 @@
+// Write a program in C to check a number is a prime number or not using recursion.
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void prime_or_not(int, int);
+int main()
+{
+    int number;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    prime_or_not(number, 2);
+}
+void prime_or_not(int number, int i)
+{
+    if(i>sqrt(number))
+    {
+        printf("The number is prime.");
+        return;
+    }
+    else
+    {
+        if(number%i==0)
+        {
+            printf("The number is not prime.");
+            return;
+        }
+        else
+            prime_or_not(number, i+1);
+    }
+}
