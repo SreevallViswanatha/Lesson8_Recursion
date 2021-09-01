@@ -1,0 +1,63 @@
+// Write a program in C to print even or odd numbers in given range using recursion.
+#include <stdio.h>
+#include <stdlib.h>
+void even(int, int);
+void odd(int, int);
+int main()
+{
+    int start, end;
+    printf("Enter the starting number:");
+    scanf("%d", &start);
+    printf("Enter the ending number:");
+    scanf("%d", &end);
+    printf("The even numbers from %d to %d are:", start, end);
+    even(start, end);
+    printf("The odd numbers from %d to %d are:", start, end);
+    odd(start, end);
+}
+void even(int start, int end)
+{
+    if(start==end)
+    {
+        if(start%2==0)
+        {
+            printf("%d\n", start);
+            return;
+        }
+        else
+            return;
+    }
+    else
+    {
+        if(start%2==0)
+        {
+            printf("%d ", start);
+            even(start+1, end);
+        }
+        else
+            even(start+1, end);
+    }
+}
+void odd(int start, int end)
+{
+    if(start==end)
+    {
+        if(start%2!=0)
+        {
+            printf("%d\n", start);
+            return;
+        }
+        else
+            return;
+    }
+    else
+    {
+        if(start%2!=0)
+        {
+            printf("%d ", start);
+            odd(start+1, end);
+        }
+        else
+            odd(start+1, end);
+    }
+}
