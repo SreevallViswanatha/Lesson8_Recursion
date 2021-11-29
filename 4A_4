@@ -1,0 +1,26 @@
+// Write a program in C to copy One string to another using recursion.
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+void copy_string(char[], char[], int, int);
+int main()
+{
+    char string1[100], string2[100];
+    int length;
+    printf("Enter a string:");
+    scanf("%s", string1);
+    length=strlen(string1)-1;
+    printf("String 1:%s\n", string1);
+    copy_string(string1, string2, length, 0);
+}
+void copy_string(char string1[100], char string2[100], int length, int i)
+{
+    if(i==length+1)
+    {
+        string2[i]='\0';
+        printf("String 2:%s", string2);
+        exit(0);
+    }
+    string2[i]=string1[i];
+    copy_string(string1, string2, length, i+1);
+}
