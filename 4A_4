@@ -1,0 +1,32 @@
+// Write a program in C to find the Hailstone Sequence of a given number upto 1.
+#include <stdio.h>
+#include <stdlib.h>
+void hailstone_sequence(int);
+int main()
+{
+    int number;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    printf("%d ", number);
+    hailstone_sequence(number);
+}
+void hailstone_sequence(int number)
+{
+    if(number==1)
+    {
+        printf("\n");
+        exit(0);
+    }
+    else if(number%2==0)
+    {
+        number/=2;
+        printf("%d ", number);
+        hailstone_sequence(number);
+    }
+    else
+    {
+        number=3*number+1;
+        printf("%d ", number);
+        hailstone_sequence(number);
+    }
+}
