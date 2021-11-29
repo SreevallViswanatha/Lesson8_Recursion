@@ -1,0 +1,23 @@
+// Write a program in C to calculate the power of any number using recursion.
+#include <stdio.h>
+#include <stdlib.h>
+int powerc(int, int, long long);
+int main()
+{
+    int exponent, base;
+    printf("Enter the base:");
+    scanf("%d", &base);
+    printf("Enter the exponent:");
+    scanf("%d", &exponent);
+    printf("%d to the power of %d equals:%d", base, exponent, powerc(base, exponent, 1));
+}
+int powerc(int base, int exponent, long long power)
+{
+    if(exponent==0)
+        return power;
+    else
+    {
+        power*=base;
+        powerc(base, exponent-1, power);
+    }
+}
