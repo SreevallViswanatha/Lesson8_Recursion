@@ -1,0 +1,29 @@
+// Write a program in C to find the first capital letter in a string using recursion.
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+void capital_string(char[], char, int, int);
+int main()
+{
+    char string[100];
+    int length;
+    printf("Enter a string:");
+    scanf("%s", string);
+    length=strlen(string)-1;
+    capital_string(string, '0', length, 0);
+}
+void capital_string(char string[100], char c, int length, int i)
+{
+    if((c>=65)&&(c<=90))
+    {
+        printf("The first capital letter in %s is:%c.", string, c);
+        exit(0);
+    }
+    else if(i==length+1)
+    {
+        printf("There are no capital letters.");
+        exit(0);
+    }
+    c=string[i];
+    capital_string(string, c, length, i+1);
+}
